@@ -14,7 +14,7 @@ export async function mainChat(question) {
 	})
 	let answer = ""
 	for await (const chunk of stream) {
-		process.stdout.write(chunk.choices[0]?.delta?.content || "")
+		// process.stdout.write(chunk.choices[0]?.delta?.content || "")
 		answer += chunk.choices[0]?.delta?.content || ""
 	}
 	return answer

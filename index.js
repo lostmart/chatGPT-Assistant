@@ -11,8 +11,8 @@ app.get("/", (req, res) => {
 })
 
 app.post("/", async (req, res) => {
-	const answer = await mainChat("where are you ?")
 	const { question } = req.body
+	const answer = await mainChat(question)
 	res.json({ msg: "post req", question, answer })
 })
 
